@@ -13,6 +13,7 @@ import cv2
 
 @contextmanager
 def get_video_capture(path):
+    '''Context manager to ensure VideoCapture result is always released.'''
     cap = cv2.VideoCapture(str(path))
     try:
         yield cap
